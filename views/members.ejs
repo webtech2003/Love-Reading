@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+<main>
+  <section class="members_section">
+    <h2>Our Members</h2>
+    <div class="members_grid">
+      <% members.forEach(member => { %>
+        <div class="member_card">
+          <div class="member_left">
+            <h3><%= member.username %></h3>
+            <p><%= member.email %></p>
+          </div>
+          <div class="member_right">
+            <a href="/profile/<%= member._id %>">See Profile</a>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </section>
+</main>
+<%- include('partials/footer') %>

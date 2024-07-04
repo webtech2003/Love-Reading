@@ -1,0 +1,763 @@
+/* GENERAL */
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1.0 rem;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  color: #2b2929;
+}
+
+/* TRANSITION */
+
+a,
+.btn {
+  transition: all 300ms ease;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 60px;
+}
+
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.welcome_section {
+  height: 100vh;
+  background: url('/images/book1.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.welcome_text {
+  text-align: center;
+}
+
+.preview_meetings {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.preview_meetings h2 {
+  margin-bottom: 20px;
+}
+
+.meetings_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.meeting_card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+}
+
+.about_section {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+.about_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.about_image img {
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+}
+
+.about_text {
+  max-width: 600px;
+  text-align: left;
+}
+
+.about_text h2 {
+  margin-bottom: 10px;
+}
+
+.stories_section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.stories_section h2 {
+  margin-bottom: 20px;
+}
+
+.story_card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.story_left {
+  flex: 1;
+}
+
+.story_author_card {
+  background: #f0f0f0;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.story_right {
+  flex: 2;
+  padding-left: 20px;
+}
+
+.story_author_card a {
+  display: block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.story_author_card a:hover {
+  text-decoration: underline;
+}
+
+.user_profile_section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.user_profile_container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery_section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.gallery_section h2 {
+  margin-bottom: 20px;
+}
+
+.gallery_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.gallery_card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery_card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.gallery_card h3 {
+  margin: 15px 0 5px 0;
+}
+
+.gallery_card p {
+  margin: 0 0 15px 0;
+  color: #666;
+}
+
+.gallery_card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  background-color: #022f5f;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer_content p {
+  margin: 5px 0;
+  color: #f9f9f9;
+}
+
+.social_links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.social_links a:hover {
+  text-decoration: underline;
+}
+
+/* Meetings Page Styles */
+.meetings_section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.meetings_section h2 {
+  margin-bottom: 20px;
+}
+
+.meetings_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.meeting_card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+}
+
+.meeting_card button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.meeting_card button:hover {
+  background-color: #0056b3;
+}
+
+.stories_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.story_card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.story_left {
+  flex: 1;
+}
+
+.story_author_card {
+  background: #f0f0f0;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.story_author_card a {
+  display: block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.story_author_card a:hover {
+  text-decoration: underline;
+}
+
+.story_right {
+  flex: 2;
+  padding-left: 20px;
+}
+
+.story_right h3 {
+  margin-top: 0;
+}
+
+.story_form {
+  margin-bottom: 50px;
+}
+
+.story_form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.story_form input,
+.story_form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.story_form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.story_form button:hover {
+  background-color: #0056b3;
+}
+
+/* Other CSS rules */
+
+/* Discussions Page Styles */
+.discussions_section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.discussions_section h2 {
+  margin-bottom: 20px;
+}
+
+.discussions_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.discussion_card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+}
+
+.discussion_left {
+  flex: 1;
+}
+
+.discussion_author_card {
+  background: #f0f0f0;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.discussion_author_card a {
+  display: block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.discussion_author_card a:hover {
+  text-decoration: underline;
+}
+
+.discussion_right {
+  flex: 2;
+  padding-left: 20px;
+}
+
+.discussion_right h3 {
+  margin-top: 0;
+}
+
+.discussion_form {
+  margin-bottom: 50px;
+}
+
+.discussion_form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.discussion_form input,
+.discussion_form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.discussion_form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.discussion_form button:hover {
+  background-color: #0056b3;
+}
+
+/* Other CSS rules */
+
+/* Suggestions Page Styles */
+.suggestions_section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.suggestions_section h2 {
+  margin-bottom: 20px;
+}
+
+.suggestions_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.suggestion_card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+}
+
+.suggestion_left {
+  flex: 1;
+}
+
+.suggestion_author_card {
+  background: #f0f0f0;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.suggestion_author_card a {
+  display: block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.suggestion_author_card a:hover {
+  text-decoration: underline;
+}
+
+.suggestion_right {
+  flex: 2;
+  padding-left: 20px;
+}
+
+.suggestion_right h3 {
+  margin-top: 0;
+}
+
+.suggestion_form {
+  margin-bottom: 50px;
+}
+
+.suggestion_form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.suggestion_form input,
+.suggestion_form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.suggestion_form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.suggestion_form button:hover {
+  background-color: #0056b3;
+}
+
+/* Other CSS rules */
+
+/* Profile Page Styles */
+.profile_section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.profile_section h2 {
+  margin-bottom: 20px;
+}
+
+.profile_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile_form label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.profile_form input,
+.profile_form textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.profile_form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: auto;
+}
+
+.profile_form button:hover {
+  background-color: #0056b3;
+}
+
+.manage_meetings_section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.manage_meetings_section h2 {
+  margin-bottom: 20px;
+}
+
+.meeting_form {
+  margin-bottom: 50px;
+}
+
+.meeting_form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.meeting_form input,
+.meeting_form textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.meeting_form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: auto;
+}
+
+.meeting_form button:hover {
+  background-color: #0056b3;
+}
+
+.booked_meetings_section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.booked_meetings_section h2 {
+  margin-bottom: 20px;
+}
+/* Other CSS rules */
+
+/* Members Page Styles */
+.members_section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.members_section h2 {
+  margin-bottom: 20px;
+}
+
+.members_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.member_card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
+
+.member_left {
+  flex: 2;
+}
+
+.member_right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.member_right a {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.member_right a:hover {
+  background-color: #0056b3;
+}
+
+/* Other CSS rules */
+
+/* Profile Page Styles */
+.profile_section, .login_section, .register_section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.profile_section h2, .login_section h2, .register_section h2 {
+  margin-bottom: 20px;
+}
+
+.profile_form, .login_form, .register_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile_form label, .login_form label, .register_form label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.profile_form input, .login_form input, .register_form input,
+.profile_form textarea, .login_form textarea, .register_form textarea,
+.profile_form select, .login_form select, .register_form select {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.profile_form button, .login_form button, .register_form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: auto;
+}
+
+.profile_form button:hover, .login_form button:hover, .register_form button:hover {
+  background-color: #0056b3;
+}
+
+
+

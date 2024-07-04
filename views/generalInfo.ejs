@@ -1,0 +1,10 @@
+<%- include('partials/header') %>
+<main>
+  <h2>General Information</h2>
+  <form action="/update-info" method="POST">
+    <label for="info">Information:</label>
+    <textarea id="info" name="info" required><%= info %></textarea>
+    <button type="submit">Update Info</button>
+  </form>
+</main>
+<%- include('partials/footer') %>

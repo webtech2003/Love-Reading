@@ -1,0 +1,27 @@
+<%- include('partials/header') %>
+<main>
+  <section class="booked_meetings_section">
+    <h2>Booked Meetings</h2>
+    <div class="meetings_grid">
+      <% meetings.forEach(meeting => { %>
+        <div class="meeting_card">
+          <div class="meeting_left">
+            <h3><%= meeting.title %></h3>
+            <p><strong>Date:</strong> <%= meeting.date.toDateString() %></p>
+            <p><strong>Time:</strong> <%= meeting.time %></p>
+            <p><strong>Location:</strong> <%= meeting.location %></p>
+          </div>
+          <div class="meeting_right">
+            <h4>Booked By:</h4>
+            <ul>
+              <% meeting.attendees.forEach(attendee => { %>
+                <li><%= attendee.username %></li>
+              <% }); %>
+            </ul>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </section>
+</main>
+<%- include('partials/footer') %>

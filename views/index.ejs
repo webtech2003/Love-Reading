@@ -1,0 +1,77 @@
+<%- include('partials/header') %>
+<main>
+  <section class="welcome_section">
+    <div class="welcome_text">
+      <h1>Welcome to LoveReading Book Club</h1>
+    </div>
+  </section>
+
+  <section class="preview_meetings">
+    <h2>Our Scheduled Meetings</h2>
+    <div class="meetings_grid">
+      <% meetings.forEach(meeting => { %>
+        <div class="meeting_card">
+          <h3><%= meeting.title %></h3>
+          <p><%= meeting.description %></p>
+          <p><strong>Date:</strong> <%= meeting.date.toDateString() %></p>
+          <p><strong>Time:</strong> <%= meeting.time %></p>
+          <p><strong>Location:</strong> <%= meeting.location %></p>
+        </div>
+      <% }); %>
+    </div>
+  </section>
+
+  <section class="about_section">
+    <div class="about_container">
+      <div class="about_image">
+        <img src="/images/about.jpg" alt="About LoveReading">
+      </div>
+      <div class="about_text">
+        <h2>About LoveReading</h2>
+        <p>LoveReading Book Club is a community of book enthusiasts who come together to discuss their favorite reads, share stories, and connect with fellow readers. Our club offers a variety of meetings and events where members can engage in meaningful discussions and make lasting connections.</p>
+      </div>
+    </div>
+  </section>
+  <section class="stories_section">
+    <h2>Our Stories</h2>
+    <% stories.forEach(story => { %>
+      <div class="story_card">
+        <div class="story_left">
+          <div class="story_author_card">
+            <p>A story by: <%= story.author.username %></p>
+            <a href="/profile/<%= story.author._id %>">See profile</a>
+          </div>
+        </div>
+        <div class="story_right">
+          <p><%= story.content.split(' ').slice(0, 20).join(' ') %>... <a href="/stories/">Read more</a></p>
+        </div>
+      </div>
+    <% }); %>
+  </section>
+  <section class="gallery_section">
+    <h2>Meet our team</h2>
+    <div class="gallery_grid">
+      <div class="gallery_card">
+        <img src="/images/member1.jpg" alt="Team Member 1">
+        <h3>Jane Smith</h3>
+        <p>Club Leader</p>
+      </div>
+      <div class="gallery_card">
+        <img src="/images/member2.jpg" alt="Team Member 2">
+        <h3>John Doe</h3>
+        <p>Event Coordinator</p>
+      </div>
+      <div class="gallery_card">
+        <img src="/images/member3.jpg" alt="Team Member 3">
+        <h3>Celine Diego</h3>
+        <p>Book Reviewer</p>
+      </div>
+      <div class="gallery_card">
+        <img src="/images/member4.jpg" alt="Team Member 4">
+        <h3>Emily Brown</h3>
+        <p>Member</p>
+      </div>
+    </div>
+  </section>
+</main>
+<%- include('partials/footer') %>

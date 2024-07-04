@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+<main>
+  <section class="meetings_section">
+    <h2>Our Scheduled Meetings</h2>
+    <div class="meetings_grid">
+      <% meetings.forEach(meeting => { %>
+        <div class="meeting_card">
+          <h3><%= meeting.title %></h3>
+          <p><%= meeting.description %></p>
+          <p><strong>Date:</strong> <%= meeting.date.toDateString() %></p>
+          <p><strong>Time:</strong> <%= meeting.time %></p>
+          <p><strong>Location:</strong> <%= meeting.location %></p>
+          <% if (user && user.role === 'member') { %>
+            <form action="/book-meeting" method="POST">
+              <input type="hidden" name="meetingId" value="<%= meeting._id %>">
+              <button type="submit">Book Meeting</button>
+            </form>
+          <% } %>
+        </div>
+      <% }); %>
+    </div>
+  </section>
+</main>
+<%- include('partials/footer') %>

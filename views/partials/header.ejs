@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>LoveReading Book Club</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/meetings">Meetings</a></li>
+        <li><a href="/stories">Stories</a></li>
+        <% if (user) { %>
+          <% if (user.role === 'leader') { %>
+            <li><a href="/meetings/manage">Manage Meetings</a></li>
+            <li><a href="/booked-meetings">Booked Meetings</a></li>
+            <li><a href="/members">Members</a></li>
+            <!-- <li><a href="/general-info">General Info</a></li> -->
+          <% } %>
+          <li><a href="/suggestions">Suggestions</a></li>
+          <li><a href="/future-discussions">Future Discussions</a></li>
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="/logout">Logout</a></li>
+        <% } else { %>
+          <li><a href="/register">Register</a></li>
+          <li><a href="/login">Login</a></li>
+        <% } %>
+      </ul>
+    </nav>
+  </header>

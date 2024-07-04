@@ -1,0 +1,32 @@
+<%- include('partials/header') %>
+<main>
+  <section class="discussions_section">
+    <h2>Submit Your Discussion Topic</h2>
+    <form action="/future-discussions" method="POST" class="discussion_form">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title" required>
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" required></textarea>
+      <button type="submit">Submit Discussion</button>
+    </form>
+
+    <h2>Future Discussions</h2>
+    <div class="discussions_grid">
+      <% futureDiscussions.forEach(discussion => { %>
+        <div class="discussion_card">
+          <div class="discussion_left">
+            <div class="discussion_author_card">
+              <p>Suggested by: <%= discussion.username %></p>
+              
+            </div>
+          </div>
+          <div class="discussion_right">
+            <h3><%= discussion.title %></h3>
+            <p><%= discussion.description %></p>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </section>
+</main>
+<%- include('partials/footer') %>

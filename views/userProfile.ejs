@@ -1,0 +1,11 @@
+<%- include('partials/header') %>
+<main>
+  <section class="user_profile_section">
+    <div class="user_profile_container">
+      <h2>Profile of <%= user.username %></h2>
+      <p><strong>Email:</strong> <%= user.email %></p>
+      <p><strong>Bio:</strong> <%= user.profile.bio %></p>
+    </div>
+  </section>
+</main>
+<%- include('partials/footer') %>
