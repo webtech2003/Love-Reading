@@ -50,8 +50,15 @@ passport.deserializeUser(User.deserializeUser());
 
 
 // Define routes
+// app.get('/', (req, res) => {
+//   res.render('index');
+// });
+
 app.get('/', (req, res) => {
-  res.render('index');
+  res.status(200).send({
+    status: "success",
+    message: "welcome"
+  });
 });
 
 app.use((req, res, next) => {
