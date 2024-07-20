@@ -17,6 +17,7 @@ const storyRoutes = require('./routes/stories');
 const suggestionRoutes = require('./routes/suggestions');
 const userRoutes = require('./routes/users');
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Connect to MongoDB
 // mongoose.connect('mongodb://127.0.0.1:27017/loveReading', {
@@ -28,12 +29,12 @@ mongoose.connect('mongodb+srv://gtdev8303:F_d%2429_cR%40V6f%232@clustor105.7rx0l
 mongoose.connection.on("connected", ()=>console.log('connected'));
 mongoose.connection.on("error", (e)=>console.log('Error', e));
 // Middleware setup
-app.use(bodyParser.urlencoded({ extended: true }));
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.set('view engine', 'ejs');
+// app.set('views', path.join(__dirname, 'views'));
 
 // Middleware to serve static files (e.g., CSS, JavaScript)
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 
 // Passport.js configuration
 // app.use(session({
@@ -75,6 +76,6 @@ app.get('/', (req, res) => {
 // app.use('/', suggestionRoutes);
 // app.use('/', userRoutes);
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log('Server is running on port 3000');
 });
