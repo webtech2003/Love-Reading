@@ -1,22 +1,22 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const session = require('express-session');
-const User = require('./models/User');
+// const passport = require('passport');
+// const LocalStrategy = require('passport-local').Strategy;
+// const session = require('express-session');
+// const User = require('./models/User');
 const path = require('path');
 const cors = require('cors'); // Import CORS
-const GeneralInfo = require('./models/GeneralInfo');
+// const GeneralInfo = require('./models/GeneralInfo');
 
 // Routes
-const indexRoutes = require('./routes/index');
-const authRoutes = require('./routes/auth');
-const meetingRoutes = require('./routes/meetings');
-const discussionRoutes = require('./routes/discussions');
-const storyRoutes = require('./routes/stories');
-const suggestionRoutes = require('./routes/suggestions');
-const userRoutes = require('./routes/users');
+// const indexRoutes = require('./routes/index');
+// const authRoutes = require('./routes/auth');
+// const meetingRoutes = require('./routes/meetings');
+// const discussionRoutes = require('./routes/discussions');
+// const storyRoutes = require('./routes/stories');
+// const suggestionRoutes = require('./routes/suggestions');
+// const userRoutes = require('./routes/users');
 const app = express();
 const port = process.env.PORT || 3000;
 
