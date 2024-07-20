@@ -7,7 +7,14 @@ const session = require('express-session');
 const User = require('./models/User');
 const GeneralInfo = require('./models/GeneralInfo');
 
-
+// Routes
+const indexRoutes = require('./routes/index');
+const authRoutes = require('./routes/auth');
+const meetingRoutes = require('./routes/meetings');
+const discussionRoutes = require('./routes/discussions');
+const storyRoutes = require('./routes/stories');
+const suggestionRoutes = require('./routes/suggestions');
+const userRoutes = require('./routes/users');
 const app = express();
 
 // Connect to MongoDB
@@ -40,14 +47,12 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-// Routes
-const indexRoutes = require('./routes/index');
-const authRoutes = require('./routes/auth');
-const meetingRoutes = require('./routes/meetings');
-const discussionRoutes = require('./routes/discussions');
-const storyRoutes = require('./routes/stories');
-const suggestionRoutes = require('./routes/suggestions');
-const userRoutes = require('./routes/users');
+
+
+// Define routes
+app.get('/', (req, res) => {
+  res.render('index');
+});
 
 app.use((req, res, next) => {
   res.locals.user = req.user;
