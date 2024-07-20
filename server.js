@@ -5,6 +5,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const User = require('./models/User');
+const path = require('path');
 const GeneralInfo = require('./models/GeneralInfo');
 
 // Routes
