@@ -36,17 +36,17 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Passport.js configuration
-app.use(session({
-  secret: 'secret',
-  resave: false,
-  saveUninitialized: false,
-}));
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(session({
+//   secret: 'secret',
+//   resave: false,
+//   saveUninitialized: false,
+// }));
+// app.use(passport.initialize());
+// app.use(passport.session());
 
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+// passport.use(new LocalStrategy(User.authenticate()));
+// passport.serializeUser(User.serializeUser());
+// passport.deserializeUser(User.deserializeUser());
 
 
 
@@ -62,18 +62,18 @@ app.get('/', (req, res) => {
   });
 });
 
-app.use((req, res, next) => {
-  res.locals.user = req.user;
-  next();
-});
+// app.use((req, res, next) => {
+//   res.locals.user = req.user;
+//   next();
+// });
 
-app.use('/', indexRoutes);
-app.use('/', authRoutes);
-app.use('/', meetingRoutes);
-app.use('/', discussionRoutes);
-app.use('/', storyRoutes);
-app.use('/', suggestionRoutes);
-app.use('/', userRoutes);
+// app.use('/', indexRoutes);
+// app.use('/', authRoutes);
+// app.use('/', meetingRoutes);
+// app.use('/', discussionRoutes);
+// app.use('/', storyRoutes);
+// app.use('/', suggestionRoutes);
+// app.use('/', userRoutes);
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
