@@ -18,8 +18,11 @@ mongoose.connect('mongodb://127.0.0.1:27017/loveReading', {
 
 // Middleware setup
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// Middleware to serve static files (e.g., CSS, JavaScript)
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Passport.js configuration
 app.use(session({
