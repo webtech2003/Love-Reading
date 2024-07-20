@@ -11,11 +11,14 @@ const GeneralInfo = require('./models/GeneralInfo');
 const app = express();
 
 // Connect to MongoDB
-mongoose.connect('mongodb://127.0.0.1:27017/loveReading', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+// mongoose.connect('mongodb://127.0.0.1:27017/loveReading', {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+mongoose.connect('mongodb+srv://gtdev8303:F_d%2429_cR%40V6f%232@clustor105.7rx0lgg.mongodb.net/loveReading?retryWrites=true&w=majority&appName=Clustor105').then(r => console.log("Connected")).catch((err)=>console.log(err));
 
+mongoose.connection.on("connected", ()=>console.log('connected'));
+mongoose.connection.on("error", (e)=>console.log('Error', e));
 // Middleware setup
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
