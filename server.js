@@ -6,6 +6,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const User = require('./models/User');
 const path = require('path');
+const cors = require('cors'); // Import CORS
 const GeneralInfo = require('./models/GeneralInfo');
 
 // Routes
@@ -44,6 +45,7 @@ mongoose.connection.on("error", (e)=>console.log('Error', e));
 // }));
 // app.use(passport.initialize());
 // app.use(passport.session());
+app.use(cors());
 
 // passport.use(new LocalStrategy(User.authenticate()));
 // passport.serializeUser(User.serializeUser());
